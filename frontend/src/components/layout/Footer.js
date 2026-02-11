@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">ÉVORA</h3>
           <p className="footer-desc">Elegance Beyond Ordinary.</p>
-         {/*} <div className="social-links">
+          {/*} <div className="social-links">
             <a href="#" className="social-link" aria-label="Facebook">
               <FiFacebook size={20} />
             </a>
@@ -31,22 +31,22 @@ const Footer = () => {
           <h4 className="footer-subtitle">QUICK LINKS</h4>
           <ul className="footer-links">
             <li>
-              <Link to="/">Home</Link>
+              <a href="/#hero">HOME</a>
             </li>
             <li>
               <Link to="/products">ALL PRODUCTS</Link>
             </li>
             <li>
-              <Link to="/">SKINCARE</Link>
+              <a href="/#skincare">SKINCARE</a>
             </li>
             <li>
-              <Link to="/">ACCESSORIES</Link>
+              <a href="/#accessories">ACCESSORIES</a>
             </li>
             <li>
-              <Link to="/">CASUAL WEAR</Link>
+              <a href="/#casual-wear">CASUAL WEAR</a>
             </li>
             <li>
-              <Link to="/products">CONTACT</Link>
+              <a href="/#contact">CONTACT</a>
             </li>
           </ul>
         </div>

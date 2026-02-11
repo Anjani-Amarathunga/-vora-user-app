@@ -107,12 +107,37 @@ const ProductListingPage = () => {
           );
         }
 
-        // Filter by category
-        if (categoryParam) {
+        // Filter by category from sidebar OR URL parameter
+        // Sidebar filter takes precedence - empty string means "show all products"
+        if (filters.category) {
+          // If sidebar category is selected (not empty)
+          let categoryToFilter = filters.category;
+          // If it's a number (from URL mapping), convert to category name
+          if (filters.category === "1") {
+            categoryToFilter = "Skincare";
+          } else if (filters.category === "2") {
+            categoryToFilter = "Accessories";
+          } else if (filters.category === "3") {
+            categoryToFilter = "Casual Wear";
+          }
           filteredProducts = filteredProducts.filter(
-            (p) => p.category === categoryParam,
+            (p) => p.category === categoryToFilter,
+          );
+        } else if (categoryParam) {
+          // If no sidebar filter but URL has category parameter
+          let categoryToFilter = categoryParam;
+          if (categoryParam === "1") {
+            categoryToFilter = "Skincare";
+          } else if (categoryParam === "2") {
+            categoryToFilter = "Accessories";
+          } else if (categoryParam === "3") {
+            categoryToFilter = "Casual Wear";
+          }
+          filteredProducts = filteredProducts.filter(
+            (p) => p.category === categoryToFilter,
           );
         }
+        // If both filters.category is "" and no categoryParam, show all products
 
         // Filter by price range
         filteredProducts = filteredProducts.filter(

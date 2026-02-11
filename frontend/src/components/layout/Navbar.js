@@ -32,9 +32,9 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         {/* Logo */}
-        <Link to="/" className="navbar-logo">
+        <a href="/#hero" className="navbar-logo">
           <span className="logo-text">Évora</span>
-        </Link>
+        </a>
 
         {/* Mobile Menu Toggle */}
         <button
@@ -46,13 +46,13 @@ const Navbar = () => {
 
         {/* Navigation Menu */}
         <div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-          <Link
-            to="/"
+          <a
+            href="/#hero"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             HOME
-          </Link>
+          </a>
           <Link
             to="/products"
             className="nav-link"
@@ -60,34 +60,34 @@ const Navbar = () => {
           >
             ALL PRODUCTS
           </Link>
-          <Link
-            to="/products"
+          <a
+            href="/#skincare"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             SKINCARE
-          </Link>
-          <Link
-            to="/"
+          </a>
+          <a
+            href="/#accessories"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             ACCESSORIES
-          </Link>
-          <Link
-            to="/"
+          </a>
+          <a
+            href="/#casual-wear"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             CASUAL WEAR
-          </Link>
-          <Link
-            to="/"
+          </a>
+          <a
+            href="/#contact"
             className="nav-link"
             onClick={() => setIsMenuOpen(false)}
           >
             CONTACT
-          </Link>
+          </a>
         </div>
 
         {/* Icons Section */}

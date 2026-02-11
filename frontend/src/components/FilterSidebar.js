@@ -71,9 +71,9 @@ const FilterSidebar = ({ categories = [], onFilter }) => {
               <input
                 type="radio"
                 name="category"
-                value={cat.id}
-                checked={selectedCategory === cat.id}
-                onChange={() => handleCategoryChange(cat.id)}
+                value={cat.name}
+                checked={selectedCategory === cat.name}
+                onChange={() => handleCategoryChange(cat.name)}
               />
               <span>{cat.name}</span>
             </label>
