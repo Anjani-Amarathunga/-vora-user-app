@@ -1,10 +1,5 @@
 import React, { createContext, useState, useCallback, useEffect } from "react";
-import {
-  loginUser,
-  registerUser,
-  logoutUser,
-  verifyToken,
-} from "../services/authService";
+import { loginUser, logoutUser, verifyToken } from "../services/authService";
 
 export const AuthContext = createContext();
 
@@ -49,24 +44,6 @@ export const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const register = useCallback(async (userData) => {
-    setLoading(true);
-    setError(null);
-    try {
-      const response = await registerUser(userData);
-      const { token, user } = response;
-      localStorage.setItem("token", token);
-      setUser(user);
-      return { success: true, user };
-    } catch (err) {
-      const errorMessage = err.response?.data?.message || "Registration failed";
-      setError(errorMessage);
-      return { success: false, error: errorMessage };
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
   const logout = useCallback(async () => {
     try {
       await logoutUser();
@@ -85,7 +62,6 @@ export const AuthProvider = ({ children }) => {
     loading,
     error,
     login,
-    register,
     logout,
     isAuthenticated: !!user,
   };

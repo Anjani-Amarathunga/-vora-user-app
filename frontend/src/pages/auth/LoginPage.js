@@ -96,15 +96,6 @@ const LoginPage = () => {
               Continue with Facebook
             </button>
           </div>
-
-          <div className="auth-footer">
-            <p>
-              Don't have an account?{" "}
-              <Link to="/register" className="auth-link">
-                Create one here
-              </Link>
-            </p>
-          </div>
         </div>
 
         <div className="auth-image">
